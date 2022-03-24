@@ -1,5 +1,5 @@
 // import User from 'models/User.js';
-const user = require("user");
+const user = require("./models/user");
 
 const resolvers = {
   Query: {

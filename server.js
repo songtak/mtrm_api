@@ -1,5 +1,5 @@
 const express = require("express");
-const graphlHTTP = require("express-graphql");
+const expressGraphql = require("express-graphql");
 // import schema from "./schema.js"; // new 현재 폴더에 파일 추가 schema.js
 const schema = require("./schema");
 
@@ -24,10 +24,13 @@ app.use(morgan("dev"));
 app.get("/", (req, res) => {
   res.send("NodeJs Server on");
 });
-// app.use(`/graphql`, graphlHTTP({
-//     schema: schema,
-//     graphiql: true
-// })); // new
+app.use(
+  `/graphql`,
+  expressGraphql.graphqlHTTP({
+    schema: schema,
+    graphiql: true,
+  })
+); // new
 
 app.listen(port, () => {
   console.log(`Express server has Started on port ${port}`);
