@@ -1,22 +1,21 @@
-// import schema from ''
 const express = require("express");
-// const schema = require('schema');
-// import graphlHTTP from 'express-graphql'
+const graphlHTTP = require("express-graphql");
+// import schema from "./schema.js"; // new 현재 폴더에 파일 추가 schema.js
+const schema = require("./schema");
+
 const app = express();
 const port = 5000;
 const mongoose = require("mongoose");
 const morgan = require("morgan");
-const { DB_USER, DB_PASSWORD, DB_NAME } = process.env;
 
-// import express from 'express';
-// import mongoose from 'mongoose';
-// import graphlHTTP from 'express-graphql'; // new
-// import schema from './schema.js'; // new 현재 폴더에 파일 추가 schema.js
+// import express from "express";
+// import mongoose from "mongoose";
+// import graphlHTTP from "express-graphql"; // new
+// import schema from "./schema.js"; // new 현재 폴더에 파일 추가 schema.js
 
 // const app = express();
 // const port = 5000;
 // mongoose.Promise = global.Promise;
-
 
 // morgan 사용
 app.use(morgan("dev"));
